@@ -1,0 +1,230 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/createProject": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "duration",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "initiatorEmpCode",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/addReview": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "rating",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "comment",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/getprojectDetails": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/addContributor": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "empCode",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "projectId",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "message",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "initiatorEmpCode",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/approveContributor": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "empCode",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/getContributors": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/getallProjects": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/approveProjects": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "projectId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/addMilestones": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "milestones": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}
