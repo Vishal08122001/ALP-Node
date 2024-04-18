@@ -1,5 +1,6 @@
 const sendError = require("../utils/sendError");
 const sendResponse = require("../utils/sendResponse");
+require('dotenv').config()
 
 module.exports.GetToken = async (req, res) => {
     try {
@@ -19,9 +20,9 @@ module.exports.GetToken = async (req, res) => {
             method: 'POST',
             headers: headers,
             body: JSON.stringify({
-                client_id: "ftAFt3voLHeg0b7hEKDvTBlfaICWk2Uj",
-                client_secret: "-pGWsGFX0qVjEGXqFZhliguyVpE0XhWSGsWQwkklxZBZKBqD6p2FCn0daKA8ETGE",
-                audience: "http://localhost:3000",
+                client_id: process.env.CLIENT_ID,
+                client_secret: process.env.SECRET,
+                audience: process.env.AUDIENCE,
                 grant_type: "client_credentials"
             })
         }).then( async(response)=>{
