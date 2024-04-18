@@ -1,7 +1,6 @@
 const sendError = require("../utils/sendError");
 const sendResponse = require("../utils/sendResponse");
 require('dotenv').config()
-
 module.exports.GetToken = async (req, res) => {
     try {
         const {access_Key} = req.query
@@ -20,10 +19,10 @@ module.exports.GetToken = async (req, res) => {
             method: 'POST',
             headers: headers,
             body: JSON.stringify({
-                client_id: process.env.CLIENT_ID,
-                client_secret: process.env.SECRET,
-                audience: process.env.AUDIENCE,
-                grant_type: "client_credentials"
+                client_id: process.env.client_id,
+                client_secret: process.env.client_secret,
+                audience: process.env.audience,
+                grant_type: process.env.grant_type
             })
         }).then( async(response)=>{
             const data = await  response.json();

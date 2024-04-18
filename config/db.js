@@ -1,6 +1,5 @@
 const { Sequelize } = require("sequelize");
-// const config = require('./config.json')[env];
-require('dotenv').config();
+require('dotenv').config()
 // Example with connection parameters
 // const sequelize = new Sequelize("ALP_New", "postgres", "Vishal@9818", config);
 

@@ -1,15 +1,14 @@
-const {auth, requiredScopes} = require('express-oauth2-jwt-bearer')
-require('dotenv').config();
+const { auth } = require('express-oauth2-jwt-bearer')
+require('dotenv').config()
+
 
 
 const checkJwt = auth({
-    audience: process.env.AUDIENCE,
-    issuerBaseURL: process.env.IssuerBaseURL,
-    tokenSigningAlg: process.env.tokenSigningAlg
-  });
+  audience: process.env.audience,
+  issuerBaseURL: process.env.issuerBaseURL,
+  tokenSigningAlg: process.env.tokenSigningAlg
+});
 
-const checkScopes = requiredScopes('read:messages');
 module.exports = {
-    checkJwt,
-    checkScopes
+  checkJwt,
 }

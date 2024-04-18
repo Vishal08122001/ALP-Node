@@ -8,7 +8,7 @@ const { GetAttachments } = require("../controllers/getAttachment");
 const { getContributorRequest } = require("../controllers/getContributorRequest");
 const { GetProjectDetails } = require("../controllers/getProjectDetails");
 const { ProjectReviews } = require("../controllers/projectReviews");
-const {checkJwt, checkScopes} = require('../auth/checkJWT');
+const {checkJwt} = require('../auth/checkJWT');
 const { GetToken } = require("../controllers/generateToken");
 const router = require("express").Router();
 
