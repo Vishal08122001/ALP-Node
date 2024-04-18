@@ -128,39 +128,46 @@ const ProjectMilestones = sq.define("ProjectMilestone", {
 })
 
 const ProjectAttachment = sq.define("ProjectAttachment", {
-  id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    primaryKey: true
-  },
-  projectId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: ProjectMaster,
-      key: "id"
-    }
-  },
+  // Id: {
+  //   type: DataTypes.INTEGER,
+  //   allowNull: false,
+  //   primaryKey: true,
+  //   autoIncrement: true
+  // },
   attachment: {
     type: DataTypes.STRING(200),
     allowNull: false
   },
-  contributorId : {
-    type : DataTypes.INTEGER,
-    references : {
-      model : ProjectContributors,
-      key : "contributorId"
+  contributorId: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: ProjectContributors,
+      key: "contributorId"
+    }
+  },
+  milestoneId: { // Changed the foreign key field name
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: ProjectMilestones,
+      key: "Id"
     }
   }
-})
+});
+
 
 
 // Define associations
 ProjectMaster.hasMany(ProjectReviews, { foreignKey: "projectId" });
 ProjectContributors.belongsToMany(ProjectMaster, { through: "ProjectContributorProjectMaster" });
 ProjectMaster.belongsToMany(ProjectContributors, { through: "ProjectContributorProjectMaster" });
-ProjectMaster.hasMany(ProjectMilestones, { foreignKey: "projectId" })
-ProjectMaster.hasMany(ProjectAttachment, {foreignKey  : "projectId"})
+ProjectMaster.hasMany(ProjectMilestones, { foreignKey: "projectId" });
+ProjectMilestones.belongsTo(ProjectMaster, { foreignKey: "projectId" }); // Added association
+ProjectMilestones.hasMany(ProjectAttachment, { foreignKey: "milestoneId" }); // Changed to milestoneId
+ProjectAttachment.belongsTo(ProjectMilestones, { foreignKey: "milestoneId" }); // Added association
+ProjectContributors.hasMany(ProjectAttachment, {foreignKey : "contributorId"})
+
+
 
 // Sync models
 async function syncModels() {

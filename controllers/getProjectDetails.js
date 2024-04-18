@@ -1,4 +1,4 @@
-const { ProjectMaster, ProjectReviews, ProjectContributors, ProjectMilestones } = require("../models");
+const { ProjectMaster, ProjectReviews, ProjectContributors, ProjectMilestones, ProjectAttachment } = require("../models");
 const sendError = require("../utils/sendError");
 const sendResponse = require("../utils/sendResponse");
 

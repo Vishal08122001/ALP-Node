@@ -7,13 +7,39 @@
   },
   "host": "localhost:3000",
   "basePath": "/",
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Enter your bearer token in the format **Bearer &lt;token>**"
+    }
+  },
   "schemes": [
     "http"
   ],
   "paths": {
+    "/generateToken": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "access_Key",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/createProject": {
       "post": {
         "description": "",
+        "security": [{ "Bearer": [] }],
         "parameters": [
           {
             "name": "title",
@@ -56,6 +82,7 @@
     "/addReview": {
       "post": {
         "description": "",
+        "security": [{ "Bearer": [] }],
         "parameters": [
           {
             "name": "projectId",
@@ -83,6 +110,7 @@
     "/getprojectDetails": {
       "get": {
         "description": "",
+        "security": [{ "Bearer": [] }],
         "parameters": [
           {
             "name": "id",
@@ -100,6 +128,7 @@
     "/addContributor": {
       "post": {
         "description": "",
+        "security": [{ "Bearer": [] }],
         "parameters": [
           {
             "name": "empCode",
@@ -132,6 +161,7 @@
     "/approveContributor": {
       "post": {
         "description": "",
+        "security": [{ "Bearer": [] }],
         "parameters": [
           {
             "name": "projectId",
@@ -154,6 +184,7 @@
     "/getContributors": {
       "get": {
         "description": "",
+        "security": [{ "Bearer": [] }],
         "parameters": [
           {
             "name": "projectId",
@@ -171,6 +202,7 @@
     "/getallProjects": {
       "get": {
         "description": "",
+        "security": [{ "Bearer": [] }],
         "responses": {
           "default": {
             "description": ""
@@ -181,6 +213,7 @@
     "/approveProjects": {
       "post": {
         "description": "",
+        "security": [{ "Bearer": [] }],
         "parameters": [
           {
             "name": "body",
@@ -205,6 +238,7 @@
     "/addMilestones": {
       "post": {
         "description": "",
+        "security": [{ "Bearer": [] }],
         "parameters": [
           {
             "name": "body",
@@ -217,6 +251,54 @@
                 }
               }
             }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/addAttachment": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "attachment": {
+                  "example": "any"
+                },
+                "contributorId": {
+                  "example": "any"
+                },
+                "milestoneId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/getAttachment": {
+      "get": {
+        "security": [{ "Bearer": [] }],
+        "description": "",
+        "parameters": [
+          {
+            "name": "contributorID",
+            "in": "query",
+            "type": "string"
           }
         ],
         "responses": {
