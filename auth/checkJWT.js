@@ -4,9 +4,9 @@ require('dotenv').config()
 
 
 const checkJwt = auth({
-  audience: process.env.audience,
-  issuerBaseURL: process.env.issuerBaseURL,
-  tokenSigningAlg: process.env.tokenSigningAlg
+  audience: 'https://alp_node.com',
+  issuerBaseURL: 'https://dev-uomc1epv5ow80645.us.auth0.com',
+  tokenSigningAlg: 'RS256'
 });
 
 module.exports = {

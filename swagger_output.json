@@ -5,7 +5,7 @@
     "title": "REST API",
     "description": ""
   },
-  "host": "alp-node.onrender.com",
+  "host": "alp-node.onrender.com/",
   "basePath": "/",
   "securityDefinitions": {
     "Bearer": {
@@ -16,7 +16,7 @@
     }
   },
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/generateToken": {
