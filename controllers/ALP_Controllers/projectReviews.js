@@ -1,6 +1,6 @@
-const { ProjectReviews } = require("../models")
-const sendError = require("../utils/sendError");
-const sendResponse = require("../utils/sendResponse");
+const { ProjectReviews } = require("../../models")
+const sendError = require("../../utils/sendError");
+const sendResponse = require("../../utils/sendResponse");
 
 
 module.exports.ProjectReviews = async (req, res) => {

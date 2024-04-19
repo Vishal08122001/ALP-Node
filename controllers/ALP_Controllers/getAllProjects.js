@@ -1,6 +1,7 @@
-const { ProjectMaster, ProjectContributors, ProjectReviews, ProjectMilestones } = require("../models")
-const sendError = require("../utils/sendError")
-const sendResponse = require("../utils/sendResponse")
+const { ProjectMaster, ProjectContributors, ProjectReviews, ProjectMilestones } = require("../../models")
+const sendError = require("../../utils/sendError");
+const sendResponse = require("../../utils/sendResponse");
+
 
 module.exports.GetAllProjects = async (req, res) => {
     try {

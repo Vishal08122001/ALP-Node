@@ -1,6 +1,7 @@
-const { ProjectContributors, ProjectMaster } = require("../models");
-const sendError = require("../utils/sendError");
-const sendResponse = require("../utils/sendResponse");
+const { ProjectContributors, ProjectMaster } = require("../../models");
+const sendError = require("../../utils/sendError");
+const sendResponse = require("../../utils/sendResponse");
+
 
 
 module.exports.AddContributor = async (req, res) => {

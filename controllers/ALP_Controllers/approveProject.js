@@ -1,6 +1,6 @@
-const { ProjectMaster } = require("../models")
-const sendError = require("../utils/sendError")
-const sendResponse = require("../utils/sendResponse")
+const { ProjectMaster } = require("../../models")
+const sendError = require("../../utils/sendError");
+const sendResponse = require("../../utils/sendResponse");
 
 module.exports.ApproveProject = async (req, res) => {
     try {

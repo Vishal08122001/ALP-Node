@@ -1,6 +1,6 @@
 const axios = require('axios');
-const sendError = require("../utils/sendError");
-const sendResponse = require("../utils/sendResponse");
+const sendError = require("../../utils/sendError");
+const sendResponse = require("../../utils/sendResponse");
 require('dotenv').config();
 
 module.exports.GetToken = async (req, res) => {

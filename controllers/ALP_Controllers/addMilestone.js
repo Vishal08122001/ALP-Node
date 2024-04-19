@@ -1,6 +1,6 @@
-const { ProjectMilestones } = require("../models")
-const sendError = require("../utils/sendError");
-const sendResponse = require("../utils/sendResponse");
+const { ProjectMilestones } = require("../../models");
+const sendError = require("../../utils/sendError");
+const sendResponse = require("../../utils/sendResponse");
 
 module.exports.AddMilestones = async (req, res) => {
     try {

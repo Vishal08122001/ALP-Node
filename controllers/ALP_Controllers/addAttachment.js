@@ -1,6 +1,6 @@
-const { ProjectAttachment, ProjectMilestones } = require("../models");
-const sendError = require("../utils/sendError");
-const sendResponse = require("../utils/sendResponse");
+const { ProjectAttachment, ProjectMilestones } = require("../../models");
+const sendError = require("../../utils/sendError");
+const sendResponse = require("../../utils/sendResponse");
 
 module.exports.AddAttachments = async (req, res) => {
     try {

@@ -5,7 +5,7 @@
     "title": "REST API",
     "description": ""
   },
-  "host": "alp-node.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "securityDefinitions": {
     "Bearer": {
@@ -16,7 +16,7 @@
     }
   },
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/generateToken": {
@@ -75,6 +75,42 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/getDashboardData": {
+      "get": {
+        "description": "",
+        "security": [{ "Bearer": [] }],
+        "parameters": [
+          {
+            "name": "employeeCode",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/myLearnings": {
+      "get": {
+        "security": [{ "Bearer": [] }],
+        "description": "",
+        "parameters": [
+          {
+            "name": "employeeCode",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
           }
         }
       }
