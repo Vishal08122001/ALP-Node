@@ -22,13 +22,6 @@
     "/generateToken": {
       "get": {
         "description": "",
-        "parameters": [
-          {
-            "name": "access_Key",
-            "in": "query",
-            "type": "string"
-          }
-        ],
         "responses": {
           "default": {
             "description": ""
